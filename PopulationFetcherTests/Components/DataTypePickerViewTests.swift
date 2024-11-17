@@ -18,7 +18,7 @@ final class DataTypePickerViewTests: XCTestCase {
         let view = DataTypePickerView(type: binding)
 
         // When
-        let picker = try view.inspect().picker()
+        let picker = try view.inspect().find(ViewType.Picker.self)
         var texts = picker.findAll(ViewType.Text.self)
         texts.removeLast()
 
@@ -42,7 +42,7 @@ final class DataTypePickerViewTests: XCTestCase {
         let view = DataTypePickerView(type: binding)
 
         // When
-        let picker = try view.inspect().picker()
+        let picker = try view.inspect().find(ViewType.Picker.self)
         // Simulate selection change
         try picker.select(value: DataType.nation)
 
